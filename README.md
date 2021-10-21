@@ -186,5 +186,7 @@ By default, [SfTreeView](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.T
 
 ![Shows the disable mouse hover highlight in SfTreeView](DiasabledMouseOverHighlight.gif)
 
+KB article - [How to disable MouseOver highlight when hovering over items in WPF TreeView (SfTreeView)?](https://www.syncfusion.com/kb/12287/how-to-disable-mouseover-highlight-when-hovering-over-items-in-wpf-treeview-sftreeview)
+
 ## Requirements to run the demo
 Visual Studio 2015 and above versions
