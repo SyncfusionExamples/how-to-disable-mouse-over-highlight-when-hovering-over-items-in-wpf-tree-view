@@ -1,9 +1,9 @@
-# How to disable MouseOver highlight when hovering over items in WPF TreeView (SfTreeView)?
+# How to disable MouseOver highlight when hovering over items in WPF TreeView?
 
 ## About the sample
-This example illustrates how to disable MouseOver highlight when hovering over items in WPF TreeView (SfTreeView)
+This example illustrates how to disable MouseOver highlight when hovering over items in WPF TreeView.
 
-By default, [WPF TreeView](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.TreeView.SfTreeView.html) (SfTreeView) does not provide the direct support to disable the MouseOver highlight when hovering over items in the SfTreeView. You can disable the MouseOver highlight by overriding the [TreeViewItem](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.TreeView.TreeViewItem.html) Template and change the **Background** property as **Transparent** in **PART_HoverBorder** of TreeViewItem Template in SfTreeView
+By default, [WPF TreeView](https://www.syncfusion.com/wpf-controls/treeview) (SfTreeView) does not provide the direct support to disable the MouseOver highlight when hovering over items in the SfTreeView. You can disable the MouseOver highlight by overriding the [TreeViewItem](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.TreeView.TreeViewItem.html) Template and change the **Background** property as **Transparent** in **PART_HoverBorder** of TreeViewItem Template in SfTreeView.
 
 ```XML
 
@@ -221,7 +221,7 @@ By default, [WPF TreeView](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml
 
 ![Shows the disable mouse hover highlight in SfTreeView](DiasabledMouseOverHighlight.gif)
 
-KB article - [How to disable MouseOver highlight when hovering over items in WPF TreeView (SfTreeView)?](https://www.syncfusion.com/kb/12287/how-to-disable-mouseover-highlight-when-hovering-over-items-in-wpf-treeview-sftreeview)
+KB article - [How to disable MouseOver highlight when hovering over items in WPF Treeview?](https://www.syncfusion.com/kb/12287/how-to-disable-mouseover-highlight-when-hovering-over-items-in-wpf-treeview-sftreeview)
 
 ## Requirements to run the demo
 Visual Studio 2015 and above versions
