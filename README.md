@@ -1,12 +1,10 @@
-# How to disable MouseOver highlight when hovering over items in WPF TreeView?
+# How to Disable MouseOver Highlight when Hovering Over Items in WPF TreeView?
 
-## About the sample
-This example illustrates how to disable MouseOver highlight when hovering over items in WPF TreeView.
+This example illustrates how to disable MouseOver highlight when hovering over items in [WPF TreeView](https://www.syncfusion.com/wpf-controls/treeview) (SfTreeView).
 
-By default, [WPF TreeView](https://www.syncfusion.com/wpf-controls/treeview) (SfTreeView) does not provide the direct support to disable the MouseOver highlight when hovering over items in the SfTreeView. You can disable the MouseOver highlight by overriding the [TreeViewItem](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.TreeView.TreeViewItem.html) Template and change the **Background** property as **Transparent** in **PART_HoverBorder** of TreeViewItem Template in SfTreeView.
+By default, `TreeView` does not provide the direct support to disable the MouseOver highlight when hovering over items in the SfTreeView. You can disable the MouseOver highlight by overriding the [TreeViewItem](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.TreeView.TreeViewItem.html) Template and change the `Background` property as `Transparent` in `PART_HoverBorder` of TreeViewItem Template in `TreeView`.
 
-```XML
-
+``` xml
 <BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
 
 <DataTemplate x:Key="busyIndicatorTemplate">
@@ -23,97 +21,82 @@ By default, [WPF TreeView](https://www.syncfusion.com/wpf-controls/treeview) (Sf
     <Setter Property="Background" Value="White"/>            
     <Setter Property="Template">               
         <Setter.Value>                   
-            <ControlTemplate TargetType="{x:Type syncfusion:TreeViewItem}">                                               
-                <Grid x:Name="ROOT" Background="{TemplateBinding Background}">                                                       
-                    <VisualStateManager.VisualStateGroups>                                                               
-                        <VisualStateGroup x:Name="DropStates">                                                                       
-                            <VisualState x:Name="Normal"/>                                                                       
-                            <VisualState x:Name="DropAsChild">                                                                             
-                                <Storyboard>                                                                                       
+            <ControlTemplate TargetType="{x:Type syncfusion:TreeViewItem}">                        
+                <Grid x:Name="ROOT" Background="{TemplateBinding Background}">            
+                    <VisualStateManager.VisualStateGroups>                   
+                        <VisualStateGroup x:Name="DropStates">
+                            <VisualState x:Name="Normal"/>                       
+                            <VisualState x:Name="DropAsChild">                  
+                                <Storyboard>                            
                                     <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
                                                                    Duration="00:00:00"
                                                                    Storyboard.TargetName="BorderContent"
                                                                    Storyboard.TargetProperty="Background">
                                                                                        
-                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">                                                        
-                                            <DiscreteObjectKeyFrame.Value>                                                                 
-                                                <SolidColorBrush Color="#D2DFF2" />                                                      
-                                            </DiscreteObjectKeyFrame.Value>                                                                
-                                        </DiscreteObjectKeyFrame>
-                                                                                   
-                                    </ObjectAnimationUsingKeyFrames>
-                                                                               
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">  
+                                            <DiscreteObjectKeyFrame.Value>      
+                                                <SolidColorBrush Color="#D2DFF2" />  
+                                            </DiscreteObjectKeyFrame.Value>          
+                                        </DiscreteObjectKeyFrame>                              
+                                    </ObjectAnimationUsingKeyFrames>                          
                                     <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
                                                                    Duration="00:00:00"
                                                                    Storyboard.TargetName="BorderContent"
                                                                    Storyboard.TargetProperty="BorderBrush">
                                                                                        
-                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">                                                        
-                                            <DiscreteObjectKeyFrame.Value>                                                                 
-                                                <SolidColorBrush Color="#2B579A"/>                                                       
-                                            </DiscreteObjectKeyFrame.Value>                                                                
-                                        </DiscreteObjectKeyFrame>
-                                                                                   
-                                    </ObjectAnimationUsingKeyFrames>
-                                                                               
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">   
+                                            <DiscreteObjectKeyFrame.Value>      
+                                                <SolidColorBrush Color="#2B579A"/>
+                                            </DiscreteObjectKeyFrame.Value>       
+                                        </DiscreteObjectKeyFrame>                       
+                                    </ObjectAnimationUsingKeyFrames>                  
                                     <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
                                                                    Duration="00:00:00"
                                                                    Storyboard.TargetName="BorderContent"
-                                                                   Storyboard.TargetProperty="BorderThickness">
-                                                                                       
-                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">                                                        
-                                            <DiscreteObjectKeyFrame.Value>                                                                 
-                                                <Thickness>1</Thickness>                                                                   
-                                            </DiscreteObjectKeyFrame.Value>                                                                
-                                        </DiscreteObjectKeyFrame>
-                                                                                   
-                                    </ObjectAnimationUsingKeyFrames>
-                                                                               
+                                                                   Storyboard.TargetProperty="BorderThickness">                              
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                            <DiscreteObjectKeyFrame.Value>  
+                                                <Thickness>1</Thickness>                
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>                   
+                                    </ObjectAnimationUsingKeyFrames>           
                                     <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
                                                                    Duration="00:00:00"
                                                                    Storyboard.TargetName="PART_ExpanderView"
-                                                                   Storyboard.TargetProperty="Background">
-                                                                                       
-                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">                                                        
-                                            <DiscreteObjectKeyFrame.Value>                                                                 
-                                                <SolidColorBrush Color="#D2DFF2" />                                                      
-                                            </DiscreteObjectKeyFrame.Value>                                                                
-                                        </DiscreteObjectKeyFrame>
-                                                                                   
-                                    </ObjectAnimationUsingKeyFrames>
-                                                                           
-                                </Storyboard>                                                                           
-                            </VisualState>                                                                   
-                        </VisualStateGroup>                                                           
+                                                                   Storyboard.TargetProperty="Background">                     
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                            <DiscreteObjectKeyFrame.Value>
+                                                <SolidColorBrush Color="#D2DFF2" />
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>                   
+                                    </ObjectAnimationUsingKeyFrames>             
+                                </Storyboard>                                               
+                            </VisualState>                                    
+                        </VisualStateGroup>                                
                     </VisualStateManager.VisualStateGroups>
-                                               
-                    <Grid.ColumnDefinitions>                                                               
+                    <Grid.ColumnDefinitions>                                
                         <ColumnDefinition MaxWidth="{TemplateBinding IndentationWidth}"/>                                                  
-                        <ColumnDefinition Width="Auto"/>                                                               
-                        <ColumnDefinition Width="*"/>                                                               
-                        <ColumnDefinition Width="Auto"/>                                                           
+                        <ColumnDefinition Width="Auto"/>                                       
+                        <ColumnDefinition Width="*"/>                                
+                        <ColumnDefinition Width="Auto"/>                                
                     </Grid.ColumnDefinitions>
                                                
                     <Border x:Name="BorderContent"  
                             BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{TemplateBinding BorderBrush}"/>
-
                         <Border x:Name="PART_HoverBorder" 
                                 Visibility="Collapsed" 
                                 Margin="1"
                                 Background="Transparent"/> 
-               
                             <StackPanel x:Name="PART_IndentContainer" 
                                         Panel.ZIndex="0"
                                         Orientation="Horizontal"
-                                        Grid.Column="0">
-                                                               
+                                        Grid.Column="0">    
                                 <Rectangle x:Name="PART_IndentLine" 
                                            StrokeDashArray="2,2"
                                            HorizontalAlignment="Stretch"
                                            Visibility="Hidden">
-                                </Rectangle>
-                                                           
+                                </Rectangle>   
                             </StackPanel>  
                
                             <Grid x:Name="PART_LineGrid"
@@ -220,8 +203,6 @@ By default, [WPF TreeView](https://www.syncfusion.com/wpf-controls/treeview) (Sf
 ```
 
 ![Shows the disable mouse hover highlight in SfTreeView](DiasabledMouseOverHighlight.gif)
-
-KB article - [How to disable MouseOver highlight when hovering over items in WPF Treeview?](https://www.syncfusion.com/kb/12287/how-to-disable-mouseover-highlight-when-hovering-over-items-in-wpf-treeview-sftreeview)
 
 ## Requirements to run the demo
 Visual Studio 2015 and above versions
